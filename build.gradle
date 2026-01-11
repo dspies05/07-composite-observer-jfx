@@ -2,12 +2,15 @@ plugins {
     id 'java'
     id 'application'
     id 'idea'
-	id 'org.openjfx.javafxplugin' version '0.0.9'
+	id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
 group 'ohm.softa'
 version '1.0-SNAPSHOT'
 
+application{
+	mainModule = 'ohm.softa.a07'
+}
 mainClassName = 'ohm.softa.a07.App'
 
 repositories {

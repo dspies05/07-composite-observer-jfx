@@ -20,10 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class OpenMensaAPITests {
 
 	private static final Logger logger = LogManager.getLogger(OpenMensaAPITests.class);
-	private OpenMensaAPI openMensaAPI;
+	private static OpenMensaAPI openMensaAPI;
 
 	@BeforeAll
-	void setup() {
+	static void setup() {
 
 		// use this to intercept all requests and output them to the logging facilities
 		HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
@@ -47,9 +47,10 @@ class OpenMensaAPITests {
 		// TODO prepare call
 
 		// TODO execute the call synchronously
+		List<Meal> result = openMensaAPI.getMeals(269, "2023-11-20").execute().body();
 
 		// TODO unwrap the body
-		List<Meal> meals = null;
+		List<Meal> meals = result;
 
 		assertNotNull(meals);
 		assertNotEquals(0, meals.size());
